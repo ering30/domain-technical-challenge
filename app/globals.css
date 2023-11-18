@@ -6,8 +6,34 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --navy-blue: #394f63;
+  --light-grey: #e7e9ec;
+  --dark-grey: #758e9d;
+  --mid-blue: #3fa9e2;
+  --black: #3c3c3c;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--black);
+}
+
+.input-group__text {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0 2px 0;
+}
+
+.input-group__text input {
+  border: 1px solid grey;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.input-group__text label {
+  font-size: 0.8rem;
+  color: var(--navy-blue);
+}
+
+.builder h1 {
+  color: var(--navy-blue);
 }
