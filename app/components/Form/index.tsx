@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import Submit from "../SubmitInput";
 // import FileInput from "../FileInput";
 import { useDispatch, useSelector } from "react-redux";
-import { UserState } from "../../Redux/user.slice";
 import {
+  UserState,
   updateUserCountry,
   updateUserEmail,
   updateUserFirstName,
@@ -15,20 +15,20 @@ import {
   updateUserState,
   updateUserStreetName,
   updateUserSuburb,
-} from "@/app/Redux/user.slice";
+} from "../../Redux/user.slice";
 
 export default function Form() {
   const dispatch = useDispatch();
-  const firstName = useSelector((state:UserState) => state.firstName);
-  const lastName = useSelector((state:UserState) => state.lastName);
+  const firstName = useSelector((state: UserState) => state.firstName);
+  const lastName = useSelector((state: UserState) => state.lastName);
   const email = useSelector((state: UserState) => state.email);
   const phone = useSelector((state: UserState) => state.phone);
-  const houseNumber = useSelector((state:UserState) => state.houseNumber);
-  const streetName = useSelector((state:UserState) => state.streetName);
-  const suburb = useSelector((state:UserState) => state.suburb);
-  const state = useSelector((state:UserState) => state.state);
-  const postcode = useSelector((state:UserState) => state.postcode);
-  const country = useSelector((state:UserState) => state.country);
+  const houseNumber = useSelector((state: UserState) => state.houseNumber);
+  const streetName = useSelector((state: UserState) => state.streetName);
+  const suburb = useSelector((state: UserState) => state.suburb);
+  const state = useSelector((state: UserState) => state.state);
+  const postcode = useSelector((state: UserState) => state.postcode);
+  const country = useSelector((state: UserState) => state.country);
   const {
     register,
     handleSubmit,
