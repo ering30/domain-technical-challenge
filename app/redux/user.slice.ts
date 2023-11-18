@@ -42,6 +42,7 @@ const userSlice = createSlice({
     updateUserState: (state, action) => {state.state = action.payload},
     updateUserPostcode: (state, action) => {state.postcode = action.payload},
     updateUserCountry: (state, action) => {state.country = action.payload},
+    updateUserAvatar: (state, action) => {state.avatar = action.payload},
 
     // TODO: add reducer to reset values 
   },
@@ -60,4 +61,5 @@ export const {
   updateUserState,
   updateUserPostcode,
   updateUserCountry,
+  updateUserAvatar,
 } = userSlice.actions;

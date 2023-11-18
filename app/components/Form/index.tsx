@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 import Submit from "../SubmitInput";
-// import FileInput from "../FileInput";
+import FileInput from "../FileInput";
 import { useDispatch, useSelector } from "react-redux";
 import {
   UserState,
@@ -16,9 +16,12 @@ import {
   updateUserStreetName,
   updateUserSuburb,
 } from "../../redux/user.slice";
+import handleFileInputChange from "@/app/Hooks/useFileInput";
+import useFileInput from "@/app/Hooks/useFileInput";
 
 export default function Form() {
   const dispatch = useDispatch();
+  const { handleFileInputChange } = useFileInput();
   const firstName = useSelector((state: UserState) => state.firstName);
   const lastName = useSelector((state: UserState) => state.lastName);
   const email = useSelector((state: UserState) => state.email);
@@ -29,6 +32,7 @@ export default function Form() {
   const state = useSelector((state: UserState) => state.state);
   const postcode = useSelector((state: UserState) => state.postcode);
   const country = useSelector((state: UserState) => state.country);
+  const avatar = useSelector((state: UserState) => state.avatar);
   const {
     register,
     handleSubmit,
@@ -46,18 +50,21 @@ export default function Form() {
       state,
       postcode,
       country,
+      avatar
     },
   });
 
   const results = watch();
 
-  const successMessage = `Success! Thanks ${results.firstName}, your details have been submitted to hCard Builder.`;
+  const successMessage = `Success! Thanks ${results.firstName}, your details have been submitted to hCard Builder. ${results.avatar}`;
+  // const handleFileInput = (event:HTMLInputElement) => useHandleFileInputChange(event);
 
   // TODO: check field validation
   return (
     <form
       onSubmit={handleSubmit(() => {
         alert(successMessage);
+        console.log(avatar)
       })}
     >
       <div className="flex-col justify-evenly w-[500px]">
@@ -207,8 +214,8 @@ export default function Form() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3 my-4 text-center">
-          {/* <FileInput id="avatar" /> */}
-          <p className="text-sm text-red-600 py-1">{errors.country?.message}</p>
+          <FileInput id="avatar" handleChange={handleFileInputChange}/>
+          <p className="text-sm text-red-600 py-1">{errors.avatar?.message}</p>
           <Submit text="Create hCard" />
         </div>
       </div>
