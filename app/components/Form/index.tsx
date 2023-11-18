@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Submit from "../SubmitInput";
 // import FileInput from "../FileInput";
 import { useDispatch, useSelector } from "react-redux";
-import { UserState } from "@/app/Redux/user.slice";
+import { UserState } from "../../Redux/user.slice";
 import {
   updateUserCountry,
   updateUserEmail,
