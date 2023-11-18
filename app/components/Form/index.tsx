@@ -15,7 +15,7 @@ import {
   updateUserState,
   updateUserStreetName,
   updateUserSuburb,
-} from "../../Redux/user.slice";
+} from "../../redux/user.slice";
 
 export default function Form() {
   const dispatch = useDispatch();
