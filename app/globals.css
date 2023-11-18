@@ -37,3 +37,34 @@ body {
 .builder h1 {
   color: var(--navy-blue);
 }
+
+.card-info__grid {
+  display: grid;
+  /* grid-template-columns: 1fr 5fr; */
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card-info__border {
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.card-info__main-fields {
+  border-bottom: 1px solid var(--light-grey);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card-info__label {
+  font-size: 0.75rem;
+  place-self: end start;
+}
+
+.card-info__content {
+  place-self: end start;
+}
+
+.card-info__content--main {
+  place-self: end start;
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
