@@ -14,6 +14,8 @@ const config: Config = {
       'lightGrey': '#e7e9ec',
       'darkGrey': '#758e9d',
       'blue': '#3fa9e2',
+      'red': '#ff0000',
+      'lightBlue': '#89c2e1',
     },
     extend: {
       backgroundImage: {

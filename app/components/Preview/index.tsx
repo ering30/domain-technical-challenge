@@ -23,7 +23,7 @@ export default function Preview() {
             <h1 className="text-2xl text-left font-bold text-white max-w-[370px]">
               {fullName}
             </h1>
-            <div className="absolute w-[80px] h-[100px] bg-white top-3 right-3 p-2 border-2 border-lightGrey">
+            <div className="absolute w-[80px] h-[100px] bg-white top-3 right-3 p-2 border-2 border-lightGrey object-cover flex justify-center items-center">
               <Image src={state.user.avatar===""? `/images/placeholder-avatar.jpeg`: state.user.avatar} alt="User Avatar" width={60} height={80} />
             </div>
           </div>
@@ -47,13 +47,13 @@ export default function Preview() {
               </p>
             </div>
             <div className="grid grid-cols-2 card-info__border">
-              <div className=" grid grid-cols-3">
+              <div className=" grid grid-cols-3 gap-1">
                 <p className={`card-info__label ${inter.className}`}>
                   POSTCODE
                 </p>
                 <p className="card-info__content">{state.user.postcode}</p>
               </div>
-              <div className="grid grid-cols-3">
+              <div className="grid grid-cols-3 gap-1">
                 <p className={`card-info__label ${inter.className}`}>COUNTRY</p>
                 <p className="card-info__content">{countryCapitalised}</p>
               </div>
