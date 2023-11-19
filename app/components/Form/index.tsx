@@ -193,7 +193,6 @@ export default function Form() {
             title="Upload Avatar"
             handleChangeFunction={(event) => handleFormChange(event)}
           />
-          {/* File Input doesn't load file data... TBC */}
           <Submit text="Create hCard" />
         </div>
       </div>
