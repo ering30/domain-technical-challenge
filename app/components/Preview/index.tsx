@@ -16,8 +16,9 @@ export default function Preview() {
 
   return (
     <div className="flex flex-col justify-center h-full">
-      <h2 className="text-right text-base text-gray-500 my-2">HCARD PREVIEW</h2>
-      <div className={`h-[300px] ${merriweather.className}`}>
+      
+      <div className={`self-center h-[300px] max-w-[500px] ${merriweather.className}`}>
+      <h2 className={`text-right text-base text-gray-500 mb-2 -mt-[30px] ${inter.className}`}>HCARD PREVIEW</h2>
         <div className="h-full w-full relative">
           <div className="flex flex-col justify-end p-5 h-[33%] bg-blue-950">
             <h1 className="text-2xl text-left font-bold text-white max-w-[370px]">

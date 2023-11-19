@@ -3,9 +3,9 @@ import Preview from "./components/Preview";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-around p-24">
-      <div className="grid grid-cols-2">
-        <div className="builder px-8 py-4">
+    <main className="">
+      <div className="grid grid-rows-2 lg:grid-cols-2">
+        <div className="builder px-8 py-4 place-self-center">
           <h1 className="text-3xl my-4 font-bold">hCard Builder</h1>
           <Form />
         </div>
