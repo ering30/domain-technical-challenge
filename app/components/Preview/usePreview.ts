@@ -9,6 +9,7 @@ const capitaliseFirstLetters = (str: string) => {
     return str.toLowerCase().split(" ").map((word)=> word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
 }
 
+// formatted values for display in preview
 export default function usePreviewForm() {
   const state = useSelector((state: StoredUserState) => state);
   

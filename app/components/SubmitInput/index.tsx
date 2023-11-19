@@ -4,6 +4,6 @@ export type SubmitInputProps = {
 
 export default function Submit({text}: SubmitInputProps) {
   return (
-    <input type="submit" value={text} className="bg-blue text-white w-[200px] py-3 px-10 place-self-center rounded"/>
+    <input type="submit" value={text} className="bg-blue text-white w-[200px] py-3 px-10 place-self-center rounded hover:bg-lightBlue"/>
   )
 }
