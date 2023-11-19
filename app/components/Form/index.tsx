@@ -6,6 +6,7 @@ import FormSectionTitle from "../FormSectionTitle";
 import FormInputLabel from "../FormInputLabel";
 import useUserValues from "./useUserValues";
 import { useEffect } from "react";
+import usePreviewForm from "../Preview/usePreview";
 
 export default function Form() {
   const {
@@ -22,6 +23,8 @@ export default function Form() {
     avatar,
     handleFormChange,
   } = useUserValues();
+
+  const { fullName } = usePreviewForm();
 
   const {
     register,
@@ -43,7 +46,7 @@ export default function Form() {
     },
   });
 
-  const successMessage = `Success! Thanks ${firstName}, your details have been submitted to hCard Builder.`;
+  const successMessage = `Success! Thanks ${fullName}, your details have been submitted to hCard Builder.`;
 
   useEffect(() => {
     console.log(avatar);
