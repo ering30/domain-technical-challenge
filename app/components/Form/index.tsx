@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 import Submit from "../SubmitInput";
-// import FileInput from "../FileInput";
+import FileInput from "../FileInput";
 import { useDispatch, useSelector } from "react-redux";
 import {
   UserState,
@@ -16,6 +16,8 @@ import {
   updateUserStreetName,
   updateUserSuburb,
 } from "../../redux/user.slice";
+import FormSectionTitle from "../FormSectionTitle";
+import FormInputLabel from "../FormInputLabel";
 
 export default function Form() {
   const dispatch = useDispatch();
@@ -59,13 +61,14 @@ export default function Form() {
       onSubmit={handleSubmit(() => {
         alert(successMessage);
       })}
+      className="flex flex-col justify-center max-w-lg w-full"
     >
-      <div className="flex-col justify-evenly w-[500px]">
-        <p>PERSONAL DETAILS</p>
-        <hr />
-        <div className="grid grid-cols-2 gap-3 my-4">
+      <h1 className="text-3xl my-4 font-bold text-navy">hCard Builder</h1>
+      <div className="flex flex-col justify-evenly w-full ">
+        <FormSectionTitle title="personal details" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 my-4">
           <div className="input-group__text">
-            <label htmlFor="firstName">GIVEN NAME</label>
+            <FormInputLabel labelFor="firstName" title="given name" />
             <input
               type="text"
               id="firstName"
@@ -80,7 +83,7 @@ export default function Form() {
             </p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="lastName">SURNAME</label>
+            <FormInputLabel labelFor="lastName" title="surname" />
             <input
               type="text"
               id="lastName"
@@ -95,7 +98,7 @@ export default function Form() {
             </p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="email">EMAIL</label>
+            <FormInputLabel labelFor="email" title="email" />
             <input
               type="email"
               id="email"
@@ -108,7 +111,7 @@ export default function Form() {
             <p className="text-sm text-red-600 py-1">{errors.email?.message}</p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="phone">PHONE NUMBER</label>
+            <FormInputLabel labelFor="phone" title="phone" />
             <input
               type="phone"
               id="phone"
@@ -119,11 +122,13 @@ export default function Form() {
             />
           </div>
         </div>
-        <p>ADDRESS</p>
-        <hr />
-        <div className="grid grid-cols-2 gap-3 my-4">
+        <FormSectionTitle title="address" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 my-4">
           <div className="input-group__text">
-            <label htmlFor="houseNumber">HOUSE NAME OR NUMBER</label>
+            <FormInputLabel
+              labelFor="houseNumber"
+              title="house name or number"
+            />
             <input
               id="houseNumber"
               {...register("houseNumber", {
@@ -137,7 +142,7 @@ export default function Form() {
             </p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="streetName">STREET</label>
+            <FormInputLabel labelFor="streetName" title="street" />
             <input
               id="streetName"
               {...register("streetName", {
@@ -151,7 +156,7 @@ export default function Form() {
             </p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="suburb">SUBURB</label>
+            <FormInputLabel labelFor="suburb" title="suburb" />
             <input
               id="suburb"
               {...register("suburb", {
@@ -165,7 +170,7 @@ export default function Form() {
             </p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="state">STATE</label>
+            <FormInputLabel labelFor="state" title="state" />
             <input
               id="state"
               {...register("state", {
@@ -177,7 +182,7 @@ export default function Form() {
             <p className="text-sm text-red-600 py-1">{errors.state?.message}</p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="postcode">POSTCODE</label>
+            <FormInputLabel labelFor="postcode" title="postcode" />
             <input
               id="postcode"
               {...register("postcode", {
@@ -192,7 +197,7 @@ export default function Form() {
             </p>
           </div>
           <div className="input-group__text">
-            <label htmlFor="country">COUNTRY</label>
+            <FormInputLabel labelFor="country" title="country" />
             <input
               id="country"
               {...register("country", {
@@ -206,9 +211,9 @@ export default function Form() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3 my-4 text-center">
-          {/* <FileInput id="avatar" /> */}
-          <p className="text-sm text-red-600 py-1">{errors.country?.message}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 my-4 text-center">
+          <FileInput id="avatar" title="Upload Avatar" /> 
+          {/* File Input doesn't load file data... TBC */}
           <Submit text="Create hCard" />
         </div>
       </div>

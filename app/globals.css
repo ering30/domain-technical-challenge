@@ -17,6 +17,7 @@ body {
   color: var(--black);
 }
 
+/* FORM INPUTS STYLING */
 .input-group__text {
   display: flex;
   flex-direction: column;
@@ -29,18 +30,9 @@ body {
   border-radius: 3px;
 }
 
-.input-group__text label {
-  font-size: 0.8rem;
-  color: var(--navy-blue);
-}
-
-.builder h1 {
-  color: var(--navy-blue);
-}
-
+/* PREVIEW CARD STYLING */
 .card-info__grid {
   display: grid;
-  /* grid-template-columns: 1fr 5fr; */
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 

@@ -15,16 +15,15 @@ export default function Preview() {
   const { fullName, addressLine1, addressLine2, countryCapitalised, formatEmail } = usePreviewForm();
 
   return (
-    <div className="flex flex-col justify-center h-full">
-      
+    <div className="flex flex-col justify-center h-[400px] lg:h-full">
       <div className={`self-center h-[300px] max-w-[500px] ${merriweather.className}`}>
-      <h2 className={`text-right text-base text-gray-500 mb-2 -mt-[30px] ${inter.className}`}>HCARD PREVIEW</h2>
+      <h2 className={`text-right text-base text-darkGrey mb-2 -mt-[30px] ${inter.className}`}>HCARD PREVIEW</h2>
         <div className="h-full w-full relative">
-          <div className="flex flex-col justify-end p-5 h-[33%] bg-blue-950">
+          <div className="flex flex-col justify-end p-5 h-[33%] bg-navy">
             <h1 className="text-2xl text-left font-bold text-white max-w-[370px]">
               {fullName}
             </h1>
-            <div className="absolute w-[80px] h-[100px] bg-white top-3 right-3 p-2 border-2 border-gray-300">
+            <div className="absolute w-[80px] h-[100px] bg-white top-3 right-3 p-2 border-2 border-lightGrey">
               <Image src={state.user.avatar===""? `/images/placeholder-avatar.jpeg`: state.user.avatar} alt="User Avatar" width={60} height={80} />
             </div>
           </div>
