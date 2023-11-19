@@ -44,6 +44,7 @@ const userSlice = createSlice({
     updateUserCountry: (state, action) => {state.country = action.payload},
 
     // TODO: add reducer to reset values 
+    // TODO: combine reducers to update state in one
   },
 });
 
