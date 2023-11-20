@@ -5,7 +5,6 @@ import FileInput from "../FileInput";
 import FormSectionTitle from "../FormSectionTitle";
 import FormInputLabel from "../FormInputLabel";
 import useUserValues from "./useUserValues";
-import { useEffect } from "react";
 import usePreviewForm from "../Preview/usePreview";
 
 export default function Form() {
@@ -48,9 +47,6 @@ export default function Form() {
 
   const successMessage = `Success! Thanks ${fullName}, your details have been submitted to hCard Builder.`;
 
-  useEffect(() => {
-    console.log(avatar);
-  }, [avatar]);
   // TODO: check field validation
   return (
     <form

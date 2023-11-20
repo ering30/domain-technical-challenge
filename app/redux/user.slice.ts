@@ -45,7 +45,7 @@ const userSlice = createSlice({
     updateUserAvatar: (state, action) => {state.avatar = action.payload},
 
     // TODO: add reducer to reset values 
-    // TODO: combine reducers to update state in one
+    // TODO: combine reducers to update state in one with spread operator + if/else checks on inputs
   },
 });
 
