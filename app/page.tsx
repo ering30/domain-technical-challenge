@@ -3,8 +3,8 @@ import Preview from "./components/Preview";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <div className="h-full grid grid-rows-2 lg:grid-cols-2 ">
+    <main className="max-h-screen">
+      <div className="h-full flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-1 ">
         <div className="builder w-full px-4 lg:px-8 py-4 place-self-center flex justify-center">
           <Form />
         </div>
