@@ -18,19 +18,19 @@ export default function Preview() {
     <div className="flex flex-col justify-center h-[400px] lg:h-full">
       <div className={`self-center h-[300px] max-w-[500px] ${merriweather.className}`}>
       <h2 className={`text-right text-base text-darkGrey mb-2 -mt-[30px] ${inter.className}`}>HCARD PREVIEW</h2>
-        <div className="h-full w-full relative">
+        <div className="vcard h-full w-full relative">
           <div className="flex flex-col justify-end p-5 h-[33%] bg-navy">
-            <h1 className="text-2xl text-left font-bold text-white max-w-[370px]">
+            <h1 className="fn text-2xl text-left font-bold text-white max-w-[370px]">
               {fullName}
             </h1>
             <div className="absolute w-[80px] h-[100px] bg-white top-3 right-3 p-2 border-2 border-lightGrey object-cover flex justify-center items-center">
-              <Image src={state.user.avatar===""? `/images/placeholder-avatar.jpeg`: state.user.avatar} alt="User Avatar" width={60} height={80} />
+              <Image src={state.user.avatar===""? `/images/placeholder-avatar.jpeg`: state.user.avatar} alt="User Avatar" width={60} height={80} className="photo"/>
             </div>
           </div>
           <div className="bg-white h-[67%] p-6 card-info__grid">
             <div className="flex card-info__main-fields">
               <p className={`card-info__label ${inter.className}`}>EMAIL</p>
-              <p className="card-info__content--main">{formatEmail}</p>
+              <p className="email card-info__content--main">{formatEmail}</p>
             </div>
             <div className="flex card-info__main-fields">
               <p className={`card-info__label ${inter.className}`}>PHONE</p>
@@ -38,11 +38,11 @@ export default function Preview() {
             </div>
             <div className="flex card-info__main-fields">
               <p className={`card-info__label ${inter.className}`}>ADDRESS</p>
-              <p className="card-info__content--main">{addressLine1}</p>
+              <p className="street-address card-info__content--main">{addressLine1}</p>
             </div>
             <div className="flex card-info__main-fields">
               <div className=""></div>
-              <p className="card-info__content--main">
+              <p className="locality region card-info__content--main">
                 {addressLine2}
               </p>
             </div>
